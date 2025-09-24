@@ -1,0 +1,34 @@
+# 백엔드 파드를 관리하는 Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: what-to-eat-server-deployment
+spec:
+  replicas: 1 # 우선 1개의 파드로 시작
+  selector:
+    matchLabels:
+      app: what-to-eat-server
+  template:
+    metadata:
+      labels:
+        app: what-to-eat-server
+    spec:
+      containers:
+      - name: server
+        image: jiwon000/what-to-eat-server:latest # Docker Hub 이미지 주소
+        ports:
+        - containerPort: 3001 # 컨테이너가 사용하는 포트
+---
+# 백엔드 파드에 접근할 수 있는 내부 통로(Service)
+apiVersion: v1
+kind: Service
+metadata:
+  name: what-to-eat-server-svc # 서비스 이름 (매우 중요!)
+spec:
+  selector:
+    app: what-to-eat-server # 위 Deployment의 파드를 선택
+  ports:
+  - protocol: TCP
+    port: 3001       # 서비스가 사용할 포트
+    targetPort: 3001 # 파드가 사용하는 포트
+  type: ClusterIP # 클러스터 내부에서만 접근 가능
