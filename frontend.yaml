@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: jiwon000/what-to-eat-client:latest # Docker Hub 이미지 주소
+        image: jiwon000/what-to-eat-client:1.0.0 # Docker Hub 이미지 주소
         ports:
         - containerPort: 80
         # 위에서 만든 ConfigMap의 nginx.conf를 컨테이너의 설정 파일로 사용

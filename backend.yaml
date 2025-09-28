@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: jiwon000/what-to-eat-server:latest # Docker Hub 이미지 주소
+        image: jiwon000/what-to-eat-server:1.0.0 # Docker Hub 이미지 주소
         ports:
         - containerPort: 3001 # 컨테이너가 사용하는 포트
 ---
