@@ -1,4 +1,4 @@
 kustomize:
   images:
-  - jiwon000/what-to-eat-server=docker.io/jiwon000/what-to-eat-server:1.1.1
-  - jiwon000/what-to-eat-client=docker.io/jiwon000/what-to-eat-client:1.1.1
+  - jiwon000/what-to-eat-server=docker.io/jiwon000/what-to-eat-server:1.1.2
+  - jiwon000/what-to-eat-client=docker.io/jiwon000/what-to-eat-client:1.1.2
